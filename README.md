@@ -17,7 +17,7 @@ All python files in this repository are lambda code. To implement this in aws, y
 	- Required tags:
 			- Name: Insance Name
 			- Owner: Name of the Engineer or Service owner  
-			- Application: Name of the Application (Ex. Graphite)
+			- Application: Name of the Application (Ex. Httpd)
 			- 24/7: True/False (Whether machine is expected to run 24/7)
 			- Stack: Environment (Test,Stg, Prod etc)  
 - If anyone of the listed tag is not available in existing instance then that instance will be deleted
@@ -47,12 +47,12 @@ Schedule: Every Monday, 08:00 AM
 
 ### 3.3 ELB_Scan.py
 #### 3.3.1 Logic
-- Frist stage, Scan Load Balancer
+- First stage, Scan Load Balancer
 - Load balancer which does not have proper tags and not listening to any target or instance that load balancer will be deleted.
 	- Required tags:
 			- Name: Insance Name
 			- Owner: Name of the Engineer or Service owner  
-			- Application: Name of the Application (Ex. Graphite)
+			- Application: Name of the Application (Ex. Httpd)
 			- Stack: Environment (Test,Stg, Prod etc)  
 - Second stage, Scan Target Group
 - Target group which does not have proper tags and does not have target in it that target group will be deleted.
