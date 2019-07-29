@@ -23,7 +23,7 @@ All python files in this repository are lambda code. To implement this in aws, y
 - If anyone of the listed tag is not available in existing instance then that instance will be deleted
 - If all tags are available and **24/7** is set False then that instance will be shutdown between 8:00 PM to 8:00 AM IST. 
 - If all tags are available and **24/7** is set True then no action will be taken on it.
-- Finaly a mail will be send to coreservicesteam@morningstar.com, if any action taken on any instance.
+- Finaly a mail will be send to yourmailid@example.com, if any action taken on any instance.
 
 #### 3.1.2 Lamda Function in AWS
 Function Name: EC2_Scan
@@ -36,7 +36,7 @@ Schedule: Fixed rate of 2 hours
 #### 3.2.1 Logic
 - Scan the volumes
 - List all the volumes which are not attached to any instance.
-- If any volume found not attached to any instance then a mail will be send to coreservicesteam@morningstar.com with the volume details.
+- If any volume found not attached to any instance then a mail will be send to yourmailid@example.com with the volume details.
 
 #### 3.2.2 Lambda Function in AWS
 Function Name: Volume_Scan
@@ -56,7 +56,7 @@ Schedule: Every Monday, 08:00 AM
 			- Stack: Environment (Test,Stg, Prod etc)  
 - Second stage, Scan Target Group
 - Target group which does not have proper tags and does not have target in it that target group will be deleted.
-- Finally, if any action taken in Load Balancer or Target Group then a mail will be send to coreservicesteam@morningstar.com. 
+- Finally, if any action taken in Load Balancer or Target Group then a mail will be send to yourmailid@example.com. 
 
 ### 3.3.2 Lambda Function in AWS
 Function Name: ELB_Scan
