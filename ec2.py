@@ -13,9 +13,9 @@ def send_email(sub, BodyText):
         try:
                 client = boto3.client('ses')
                 response = client.send_email(
-                    Source='coreservicesteam@morningstar.com',
+                    Source='yourmailid@example.com',
                     Destination={
-                        'ToAddresses': ['coreservicesteam@morningstar.com']
+                        'ToAddresses': ['yourmailid@example.com']
                     },
                     Message={
                         'Subject': {
