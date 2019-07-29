@@ -4,9 +4,9 @@ def send_email(sub, BodyText):
         try:
                 client = boto3.client('ses')
                 response = client.send_email(
-                    Source='coreservicesteam@morningstar.com',
+                    Source='yourmailid@example.com',
                     Destination={
-                        'ToAddresses': ['coreservicesteam@morningstar.com']
+                        'ToAddresses': ['yourmailid@example.com']
                     },
                     Message={
                         'Subject': {
@@ -41,7 +41,7 @@ def lambda_handler(event, context):
         BodyTitle = "List of unused volumes.\n\r"
         for Volumes in response['Volumes']:
                 if not Volumes['Attachments']:
-                        sub = "AWSCostOptimzation-EC2-IdleVolumes-Stop"
+                        sub = "AWSCostOptimzation-EC2-IdleVolumes"
                         lt_volume = Volumes['CreateTime']
                         BodyText += "ID: %s \rType: %s \rSize: %s \rCreate Time: %s \n\r" % (Volumes['VolumeId'], Volumes['VolumeType'], Volumes['Size'], lt_volume.strftime("%c %Z"))
 
